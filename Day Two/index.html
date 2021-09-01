@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Nav Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="search-bar">
+           <div class="search-wrap">
+               <div class="search-box">
+                <input type="search" name="search-input" placeholder="Enter Some Keywords...">
+                <span>Hit Enter to Search ESC for Remove</span>
+               </div>
+               <div class="search-remove">
+                <span class="search-exit">&times;</span>
+               </div>
+           </div> 
+        </div>
+        <div class="header-top">
+            <div class="top-left">
+                <a href="#"><span>Envato <span class="color-list">Market</span></span></a>
+            </div>
+            <div class="top-right">
+                <a href="#" class="btn btn-primary">Buy Now</a>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="header-main-container">
+                <div class="logo">
+                    <a href="#">Tagdevs</a>
+                </div>
+                <nav class="main-menu">
+                    <ul class="main-menu-items">
+                        <li><a href="#">Home</a></li>
+                        <li class="has-sub-menu">
+                            <a href="#">About <i class="fa fa-caret-down"></i></a>
+                            <ul class="sub-menu">
+                                <li class="submenu_list"><a href="#">Our History</a></li>
+                                <li class="submenu_list"><a href="#">Our Mission</a></li>
+                                <li class="submenu_list"><a href="#">Our Goal</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-sub-menu"><a href="#">Service <i class="fa fa-caret-down"></i> </a>
+                            <ul class="sub-menu">
+                                <li class="submenu_list"><a href="#">Web Development</a></li>
+                                <li class="submenu_list"><a href="#">Web Design</a></li>
+                                <li class="submenu_list"><a href="#">WordPress Development</a></li>
+                                <li class="submenu_list"><a href="#">SEO</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Portfollio</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="search-icon"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="banner">
+        <div class="banner-img" style="background-image: url(./banner.jpg);"></div>
+        <div class="center-text-box">
+            <h1>Welcome to Tagdevs</h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

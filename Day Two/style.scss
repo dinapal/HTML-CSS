@@ -1,0 +1,270 @@
+@charset 'utf-8';
+
+// Color 
+$color-enva : #6f9a37;
+$color-white: #ffffff;
+$color-black: #262626;
+$enva-bg-btn: #82b440;
+
+*,*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+a, a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+// Style Header 
+.btn{
+    padding: 7px 20px;
+    background-color: $enva-bg-btn;
+    color: $color-white ;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 $color-enva;
+    font-size: 110%;
+    transition: all .1s ease-in-out;
+    &:hover{
+        background-color: #6f9a30;
+    }
+}
+.header{
+    z-index: 999;
+    &-top{
+        background-color: $color-black;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 25px;
+        align-items: center;
+        & span{
+            font-size: 24px;
+            font-weight: 500;
+            color: $color-white;
+            & a{
+                color: $color-white;
+            }
+            & span.color-list{
+                color: $color-enva ;
+                font-weight: 300;
+            }
+        }
+    }
+    // Main Header 
+    &-main{
+        background-color: $color-white;
+        &-container{
+            width: 100%;
+            max-width: 95%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin:auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            align-items: center;
+            height: 95px;
+        }
+        & .logo{
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $color-black;
+        }
+    }
+    
+}
+.main-menu{
+    & ul.main-menu-items {
+        list-style-type: none;
+        & li{
+            display: inline;
+            padding: 35px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all .3s ease-in;
+            &.search-icon a{
+                &:active{
+                    animation: add_search 1.5s ;
+                    transition: 1.5s ease-in-out;
+                }
+                
+            }
+            &.has-sub-menu {
+                position: relative;
+                &:hover > ul.sub-menu{
+                    display: block;
+                    animation: main_manu_animation .5s;
+                }
+                & ul.sub-menu{
+                    display: none;
+                    background-color: $color-black;
+                    position: absolute;
+                    top: 75px;
+                    left: -50px;
+                    z-index: 99;
+                    min-width: 250px;
+                    
+                    & li{
+                        display: block;
+                        padding: 10px 15px;
+                        color: rgba($color-white, $alpha: .5) ;
+                        &:hover{
+                            color: $color-white;
+                        }
+                        & a{
+                            font-size: 96%;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+// Search 
+.search{
+    &-bar{
+        height: 350px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999999;
+        background: #000;
+        display: none;
+        transition: all .5s ease-in-out;
+        &.remove-search{
+            animation: remove_search .5s;
+           display: none;
+
+        }
+        &.show-search{
+            display: block;
+        }
+    }
+    &-wrap {
+        height: 100%;
+        display: flex;
+        width: 95%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    &-box {
+        flex-basis: 85%;
+        width: 85%;
+        & span{
+            color: rgba($color-white, .2);
+            margin-top: 20px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        & input[type='search']{
+            width: 100%;
+            height: 100px;
+            font-size: 30px;
+            font-weight: 600;
+            color: $color-white;
+            border: 0;
+            border-bottom: 2px solid rgba($color-white, $alpha: .1);
+            background: transparent;
+            &::placeholder{
+                color: $color-white;
+            }
+            &:active , &:focus{
+                outline: none;
+            }
+        }
+    }
+    &-remove {
+        flex-basis: 5%;
+        & span {
+            font-size: 30px;
+            color: rgba($color-white, $alpha: .5);
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.8;
+            cursor: pointer;
+            transition: .3s;
+            &:hover{
+                color: $color-white;
+                background-color: rgba($color-white, .1);
+            }
+        }
+    }
+}
+
+#banner{
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+.banner-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.center-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & h1{
+        font-size: 4rem;
+    }
+}
+
+// Animation Define 
+
+@keyframes main_manu_animation {
+    from{
+       top: 100px; 
+       opacity: .3;
+    }
+    to{
+        top: 75px;
+        opacity: 1;
+    }
+}
+@keyframes add_search {
+    from{
+        transform: translateX(0px);
+        height: 0px; 
+        opacity: 0.3;
+       
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+        height: 350px;
+        display: block;
+    }
+}
+@keyframes remove_search {
+    from{
+       height: 350px; 
+       
+    }
+    to{
+        height: 0px;
+       display: none;
+    }
+}
